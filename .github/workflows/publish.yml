@@ -21,4 +21,4 @@ jobs:
           node-version: '22'
 
       - name: Publish to Visual Studio Marketplace
-        run: npx --yes @vscode/vsce@4.0.0 publish --oidc
+        run: npx --yes @vscode/vsce@4.1.0 publish --oidc
