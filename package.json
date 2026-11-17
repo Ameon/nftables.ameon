@@ -1,0 +1,36 @@
+{
+  "name": "nftables",
+  "displayName": "nftables",
+  "description": "Syntax highlighting for nftables configuration files",
+  "version": "0.0.1",
+  "publisher": "ameon",
+  "license": "GPL-3.0-only",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "nftables",
+        "aliases": [
+          "nftables",
+          "nft"
+        ],
+        "extensions": [
+          ".nft"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "nftables",
+        "scopeName": "source.nftables",
+        "path": "./syntaxes/nftables.tmLanguage.json"
+      }
+    ]
+  }
+}

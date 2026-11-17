@@ -1,0 +1,193 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "nftables",
+  "scopeName": "source.nftables",
+  "fileTypes": [
+    "nft"
+  ],
+  "patterns": [
+    {
+      "include": "#declarations"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#variables"
+    },
+    {
+      "include": "#addresses"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#actions"
+    },
+    {
+      "include": "#protocols"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#brackets"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.nftables",
+          "match": "#.*$"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.nftables",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.nftables",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.nftables",
+          "match": "\\$[a-zA-Z_][a-zA-Z0-9_]*"
+        }
+      ]
+    },
+    "addresses": {
+      "patterns": [
+        {
+          "name": "constant.numeric.ipv4.nftables",
+          "match": "\\b(?:[0-9]{1,3}\\.){3}[0-9]{1,3}(?:/[0-9]{1,2})?\\b"
+        },
+        {
+          "name": "constant.numeric.ipv6.nftables",
+          "match": "\\b(?:[0-9a-fA-F]{0,4}:){2,}[0-9a-fA-F:]+(?:/[0-9]{1,3})?\\b"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.nftables",
+          "match": "\\b(?:0x[0-9a-fA-F]+|[0-9]+)\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.declaration.nftables",
+          "match": "\\b(?:table|chain|set|map|flowtable|counter|quota|limit|element|elements|define|include|flush|delete|add|insert|replace|list|reset|destroy|rename)\\b"
+        },
+        {
+          "name": "storage.type.nftables",
+          "match": "\\b(?:type|hook|priority|policy|flags|timeout|size|typeof|auto-merge|gc-interval|devices)\\b"
+        },
+        {
+          "name": "keyword.control.nftables",
+          "match": "\\b(?:input|output|forward|prerouting|postrouting|ingress|egress)\\b"
+        }
+      ]
+    },
+    "actions": {
+      "patterns": [
+        {
+          "name": "keyword.control.flow.nftables",
+          "match": "\\b(?:accept|drop|reject|return|jump|goto|continue|queue|dnat|snat|masquerade|redirect|notrack|log|vmap)\\b"
+        }
+      ]
+    },
+    "protocols": {
+      "patterns": [
+        {
+          "name": "support.type.nftables",
+          "match": "\\b(?:inet|ip|ip6|arp|bridge|netdev|tcp|udp|udplite|sctp|dccp|icmp|icmpv6|igmp|esp|ah|gre|meta|ct|fib|socket|ether|vlan|iif|oif|iifname|oifname|saddr|daddr|sport|dport|skuid|state|established|related|new|invalid)\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.nftables",
+          "match": "(?:==|!=|<=|>=|<<|>>|&&|\\|\\||[=<>!&|^+*/%-])"
+        }
+      ]
+    },
+    "brackets": {
+      "patterns": [
+        {
+          "name": "punctuation.section.braces.begin.nftables",
+          "match": "\\{"
+        },
+        {
+          "name": "punctuation.section.braces.end.nftables",
+          "match": "\\}"
+        },
+        {
+          "name": "punctuation.section.parens.begin.nftables",
+          "match": "\\("
+        },
+        {
+          "name": "punctuation.section.parens.end.nftables",
+          "match": "\\)"
+        },
+        {
+          "name": "punctuation.separator.nftables",
+          "match": "[,;:]"
+        }
+      ]
+    },
+    "declarations": {
+      "patterns": [
+        {
+          "match": "\\b(table)\\s+(inet|ip|ip6|arp|bridge|netdev)\\s+([a-zA-Z_][a-zA-Z0-9_-]*)",
+          "captures": {
+            "1": {
+              "name": "keyword.declaration.nftables"
+            },
+            "2": {
+              "name": "support.type.nftables"
+            },
+            "3": {
+              "name": "entity.name.function.nftables"
+            }
+          }
+        },
+        {
+          "match": "\\b(chain|set|map|flowtable|counter|quota|limit)\\s+([a-zA-Z_][a-zA-Z0-9_-]*)",
+          "captures": {
+            "1": {
+              "name": "keyword.declaration.nftables"
+            },
+            "2": {
+              "name": "entity.name.function.nftables"
+            }
+          }
+        },
+        {
+          "name": "variable.other.reference.nftables",
+          "match": "@[a-zA-Z_][a-zA-Z0-9_-]*"
+        }
+      ]
+    }
+  }
+}

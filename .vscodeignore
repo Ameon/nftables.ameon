@@ -1,0 +1,10 @@
+.git/**
+.github/**
+.gitignore
+.vscode/**
+.vscodeignore
+build.py
+*.vsix
+node_modules/**
+.pytest_cache/**
+__pycache__/**
