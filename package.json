@@ -1,6 +1,6 @@
 {
-  "name": "nftables",
-  "displayName": "nftables",
+  "name": "nftables-ameon",
+  "displayName": "nftables Syntax Highlighting (Ameon)",
   "description": "Syntax highlighting for nftables configuration files",
   "version": "0.0.1",
   "publisher": "ameon",
