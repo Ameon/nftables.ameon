@@ -32,5 +32,13 @@
         "path": "./syntaxes/nftables.tmLanguage.json"
       }
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ameon/nftables.ameon.git"
+  },
+  "homepage": "https://github.com/Ameon/nftables.ameon",
+  "bugs": {
+    "url": "https://github.com/Ameon/nftables.ameon/issues"
   }
 }
